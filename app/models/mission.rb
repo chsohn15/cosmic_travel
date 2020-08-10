@@ -18,4 +18,6 @@ class Mission < ApplicationRecord
     def planet_name
         self.planet ? self.planet.name : nil
     end
+
+    
 end

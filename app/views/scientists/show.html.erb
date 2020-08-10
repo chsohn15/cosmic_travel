@@ -13,5 +13,5 @@
 
 
 
-<%= link_to "Edit this scientist", edit_scientist_path(@scientist)%>
+<%= button_to "Edit this scientist", edit_scientist_path(@scientist), :method => :get %>
 <%= button_to "Delete this scientist", scientist_path(@scientist), :method => :delete %>

@@ -5,13 +5,20 @@ class MissionsController < ApplicationController
     end
 
     def create
-        @mission = Mission.create(mission_params)
-        redirect_to scientist_path(@mission.scientist)
+        @mission = Mission.new(mission_params)
+
+        if @mission.valid?
+            @mission.save
+            redirect_to scientist_path(@mission.scientist)
+        else
+        render :new
+        end
+        
     end
 
     private
 
     def mission_params
-        params.require(:mission).permit(:scientist_name, :planet_name, :name)
+        params.require(:mission).permit(:scientist_name, :name, :planet_name)
     end
 end

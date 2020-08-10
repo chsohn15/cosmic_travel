@@ -69,6 +69,6 @@ class PlanetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def planet_params
-      params.require(:planet).permit(:name, :distance_from_earth, :nearest_star)
+      params.require(:planet).permit(:name, :distance_from_earth, :nearest_star, :mission_id => [])
     end
 end
