@@ -1,0 +1,9 @@
+<%= form_for @mission do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :scientist_name %>
+    <%= f.collection_select :scientist_name, Scientist.all, :name, :name %>
+    <%= f.label :planet_name %>
+    <%= f.collection_select :planet_name, Planet.all, :name, :name %>
+    <%= f.submit %>
+<% end %>
